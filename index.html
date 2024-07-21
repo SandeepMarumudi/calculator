@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Layout</title>
+    <style>
+ body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#calc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#display {
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    text-align: right;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#num {
+    display: grid;
+    grid-template-areas:
+        "one two three add"
+        "four five six sub"
+        "seven eight nine multi"
+        "zero clear back div"
+        "total total total total";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    max-width: 300px;
+}
+
+#num button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#num button:hover {
+    background-color: #ddd;
+}
+
+#num button:active {
+    background-color: #ccc;
+}
+
+/* Number buttons */
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#one:hover, #two:hover, #three:hover, #four:hover, #five:hover, #six:hover, #seven:hover, #eight:hover, #nine:hover, #zero:hover {
+    background-color: #d4d4d4;
+}
+
+#one:active, #two:active, #three:active, #four:active, #five:active, #six:active, #seven:active, #eight:active, #nine:active, #zero:active {
+    background-color: #c8c8c8;
+}
+
+/* Operator buttons */
+button.operator {
+    background-color: #ff9500;
+    color: #fff;
+}
+
+button.operator:hover {
+    background-color: #e38900;
+}
+
+button.operator:active {
+    background-color: #cc7a00;
+}
+
+/* Clear button */
+button.clear {
+    background-color: #ff3b30;
+    color: #fff;
+}
+
+button.clear:hover {
+    background-color: #e33228;
+}
+
+button.clear:active {
+    background-color: #cc2c22;
+}
+
+/* Delete button */
+button#back {
+    background-color: #ffcc00;
+    color: #fff;
+}
+
+button#back:hover {
+    background-color: #e6b800;
+}
+
+button#back:active {
+    background-color: #cc9900;
+}
+
+/* Equal button */
+button.equal {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+button.equal:hover {
+    background-color: #45a045;
+}
+
+button.equal:active {
+    background-color: #3e8e41;
+}
+
+/* Specific grid areas for buttons */
+#one { grid-area: one; }
+#two { grid-area: two; }
+#three { grid-area: three; }
+#four { grid-area: four; }
+#five { grid-area: five; }
+#six { grid-area: six; }
+#seven { grid-area: seven; }
+#eight { grid-area: eight; }
+#nine { grid-area: nine; }
+#zero { grid-area: zero; }
+#add { grid-area: add; }
+#sub { grid-area: sub; }
+#multi { grid-area: multi; }
+#div { grid-area: div; }
+#total { grid-area: total; }
+#clear { grid-area: clear; }
+#back { grid-area: back; }
+
+    </style>
+</head>
+<body>
+<div id="calc">
+    <div id="display">0</div>
+    <div id="num">
+        <button id="one">1</button>
+        <button id="two">2</button>
+        <button id="three">3</button>
+        <button id="add" class="operator">+</button>
+        <button id="four">4</button>
+        <button id="five">5</button>
+        <button id="six">6</button>
+        <button id="sub" class="operator">-</button>
+        <button id="seven">7</button>
+        <button id="eight">8</button>
+        <button id="nine">9</button>
+        <button id="multi" class="operator">*</button>
+        <button id="zero">0</button>
+        <button id="clear" class="clear">Clear</button>
+        <button id="back">Del</button>
+        <button id="div" class="operator">/</button>
+        <button id="total" class="equal">=</button>
+    </div>
+</div>
+<script src="./calci.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Layout</title>
+    <style>
+        #calc{
+           display: flex;
+           flex-direction: column;
+           align-items: center; 
+           
+        }
+        #display{
+            width:253px;
+            background-color:gainsboro;
+            text-align: right;
+            padding: 20px;
+          
+
+        }
+        #num {
+            display: grid;
+            grid-template-areas: 
+                "one two three add"
+                "four five six sub"
+                "seven eight nine multi"
+                "zero clear back div"
+                "total total total total";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            max-width: 300px;
+            margin: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgb( rgb(119, 155, 246));
+            
+        }
+        
+        #num button {
+            padding: 20px;
+            font-size: 18px;
+        }
+        
+        #one { grid-area: one; }
+        #two { grid-area: two; }
+        #three { grid-area: three; }
+        #four { grid-area: four; }
+        #five { grid-area: five; }
+        #six { grid-area: six; }
+        #seven { grid-area: seven; }
+        #eight { grid-area: eight; }
+        #nine { grid-area: nine; }
+        #zero { grid-area: zero; }
+        #add { grid-area: add; }
+        #sub { grid-area: sub; }
+        #multi { grid-area: multi; }
+        #div { grid-area: div; }
+        #total { grid-area: total; }
+        #clear { grid-area: clear; }
+        #back { grid-area: back; }
+    </style>
+</head>
+<body>
+<div id="calc">
+
+    <div id="display">0</div>
+    <div id="num">
+        <button id="one">1</button>
+        <button id="two">2</button>
+        <button id="three">3</button>
+        <button id="add">+</button>
+        <button id="four">4</button>
+        <button id="five">5</button>
+        <button id="six">6</button>
+        <button id="sub">-</button>
+        <button id="seven">7</button>
+        <button id="eight">8</button>
+        <button id="nine">9</button>
+        <button id="multi">*</button>
+        <button id="zero">0</button>
+        <button id="clear">Clear</button>
+        <button id="back">Del</button>
+        <button id="div">/</button>
+        <button id="total">=</button>
+    </div>
+</div>
+<script src="./calci.js"></script>
+</body>
+</html> -->
+
